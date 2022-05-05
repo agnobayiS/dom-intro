@@ -26,7 +26,7 @@ function totalPhoneBill(total) {
     let totalCall = call.length;
     let totalSms = sms.length;
     const a = totalCall * 2.75
-    const b = totalSms * 0.65
+    const b = totalSms * 0.75
     const c = a + b
     return c.toFixed(2)
 }
