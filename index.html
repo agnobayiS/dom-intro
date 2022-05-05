@@ -186,28 +186,28 @@
             <div class="six columns">
               <h5>Bill type</h5>
               <label class="">
-                <input type="radio" name="billItemTypeWithSettings" class="billItemTypeWithSettings">
+                <input type="radio" name="billItemTypeWithSettings" id="billItemTypeWithSettings" value="call">
                 <span class="label-body">Call</span>
               </label>
               <label class="">
-                <input type="radio" name="billItemTypeWithSettings" class="billItemTypeWithSettings">
+                <input type="radio" name="billItemTypeWithSettings" id="billItemTypeWithSettings" value="sms">
                 <span class="label-body" >SMS</span>
               </label>
-              <button class="button-primary radioBillAddBtn1" type="button" name="button">Add</button>
+              <button class="button-primary radioBillAddBtn1" type="button" name="button" onclick="textBillTotal();">Add</button>
 
               <h5>Totals</h5>
                   <table>
                     <tr>
                       <td>Call total</td>
-                      <td>R<span class="callTotalSettings">0.00</span> </td>
+                      <td>R<span id="callTotalSettings">0.00</span> </td>
                     </tr>
                     <tr>
                       <td>SMS total</td>
-                      <td>R<span class="smsTotalSettings">0.00</span> </td>
+                      <td>R<span id="smsTotalSettings">0.00</span> </td>
                     </tr>
                     <tr>
                       <td>Total</td>
-                      <td> R<span class="totalSettings">0.00</span> </td>
+                      <td> R<span id="totalSettings">0.00</span> </td>
                     </tr>
                   </table>
 
@@ -215,14 +215,14 @@
             <div class="six columns">
               <h5>Settings</h5>
               <label for="exampleEmailInput">Call cost</label>
-              <input class="u-full-width callCostSetting" type="number" placeholder="eg. 2.55">
+              <input id="callCost" class="u-full-width callCostSetting" type="number" placeholder="eg. 2.55">
               <label for="exampleEmailInput">SMS cost</label>
-              <input class="u-full-width smsCostSetting" type="number" placeholder="eg. 0.65" >
+              <input  id="smsCost" class="u-full-width smsCostSetting" type="number" placeholder="eg. 0.65" >
               <label for="">Warning level</label>
-              <input class="u-full-width warningLevelSetting " type="number" placeholder="eg. 30.00" class="warningLevel" >
+              <input id="warn" class="u-full-width warningLevelSetting " type="number" placeholder="eg. 30.00" class="warningLevel" >
               <label for="">Critical level</label>
-              <input class="u-full-width criticalLevelSetting" type="number" placeholder="eg. 65.00" >
-              <button class="button-primary updateSettings" type="button" name="button">Update settings</button>
+              <input id="critical"class="u-full-width criticalLevelSetting" type="number" placeholder="eg. 65.00" >
+              <button class="button-primary updateSettings" type="button" name="button" onclick="Update();">Update settings</button>
 
             </div>
           </div>
