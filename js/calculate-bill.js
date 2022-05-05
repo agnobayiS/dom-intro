@@ -14,11 +14,15 @@ function totalPhoneBill(total) {
     for (var i = 0; i < callList.length; i++) {
         let newCallList = callList[i].trim();
 
-        if (newCallList.includes('sms')) { sms.push(newCallList) } else if
-            (newCallList.includes("call")) {
+        if (newCallList.includes('sms') || newCallList.includes('SMS')) {
+            sms.push(newCallList)
+        } else if
+            (newCallList.includes("call") || newCallList.includes("CALL")){
             call.push(newCallList)
         }
     }
+
+
     let totalCall = call.length;
     let totalSms = sms.length;
     const a = totalCall * 2.75
@@ -41,7 +45,7 @@ function calculateBtnClicked() {
 
     else if (roundedBillTotal > 20) {
         billTotalElement.classList.add("warning")
-    } 
+    }
 }
 
 calculateBtnElement.addEventListener('click', calculateBtnClicked);
