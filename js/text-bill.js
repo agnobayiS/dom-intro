@@ -18,15 +18,19 @@ totalCostElem.innerHTML = totalBill.toFixed(2);
 function textBillTotal(){
     // get the value entered in the billType textfield
     var billTypeEntered = textBoxElement.value.trim();
+    var validateCaps = billTypeEntered.toUpperCase()
     // update the correct total
-    if (billTypeEntered === "call" || billTypeEntered === "CALL"){
+    if (validateCaps === "CALL"){
         callsTotal += 2.75
     }
-    else if (billTypeEntered === "sms"  || billTypeEntered === "SMS"){
+    else if (validateCaps === "SMS"){
         smsTotal += 0.75;
     }
     
     //update the totals that is displayed on the screen.
+   
+    // var roundedBillTotal = totalPhoneBill(validateCaps);
+
     callsTotalElem.innerHTML = callsTotal.toFixed(2);
     smsTotalElem.innerHTML = smsTotal.toFixed(2);
     totalBill = callsTotal + smsTotal;

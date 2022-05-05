@@ -14,10 +14,10 @@ function totalPhoneBill(total) {
     for (var i = 0; i < callList.length; i++) {
         let newCallList = callList[i].trim();
 
-        if (newCallList.includes('sms') || newCallList.includes('SMS')) {
+        if (newCallList.includes('SMS')) {
             sms.push(newCallList)
         } else if
-            (newCallList.includes("call") || newCallList.includes("CALL")){
+            (newCallList.includes("CALL")){
             call.push(newCallList)
         }
     }
@@ -34,8 +34,9 @@ function calculateBtnClicked() {
 
     // get the string entered in the textArea
     var billString = billStringElement.value;
+    var validateCaps = billString.toUpperCase()
     //round to two decimals
-    var roundedBillTotal = totalPhoneBill(billString);
+    var roundedBillTotal = totalPhoneBill(validateCaps);
     billTotalElement.innerHTML = roundedBillTotal;
 
     if (roundedBillTotal > 30) {
