@@ -38,10 +38,13 @@ function textBillTotal() {
 
     if (totalCost1 >= 50) {
         // adding the danger class will make the text red
-        totalCostElem1.classList.add("danger");
+        totalCostElem1.classList.add("critical");
     }
     else if (totalCost1 >= 30) {
         totalCostElem1.classList.add("warning");
+    }else if(roundedBillTotal < 20){
+        billTotalElement.classList.remove("critical");
+        billTotalElement.classList.remove("warning");
     }
 
 }

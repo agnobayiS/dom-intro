@@ -41,11 +41,15 @@ function calculateBtnClicked() {
 
     if (roundedBillTotal > 30) {
         billTotalElement.classList.remove("warning");
-        billTotalElement.classList.add("danger");
+        billTotalElement.classList.add("critical");
     }
 
     else if (roundedBillTotal > 20) {
         billTotalElement.classList.add("warning")
+        billTotalElement.classList.remove("critical");
+    }else if(roundedBillTotal < 20){
+        billTotalElement.classList.remove("critical");
+        billTotalElement.classList.remove("warning");
     }
 }
 
